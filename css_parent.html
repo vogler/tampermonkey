@@ -1,0 +1,16 @@
+<html>
+  <head>
+<style>
+/* selecting parent elements via CSS is currently not supported by any browser... */
+li:has(>a:visited) {
+  color: red;
+}
+</style>
+  </head>
+  <body>
+    <ol>
+      <li>Foo <a href="http://www.google.de">google.de</a> Bar</li>
+      <li>Foo <a href="http://www.golem.de">golem.de</a> Bar</li>
+    </ol>
+  </body>
+</html>
