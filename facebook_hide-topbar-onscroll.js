@@ -14,14 +14,20 @@
     GM_addStyle('#globalContainer { margin-top: 43px };');
     let a = document.body.scrollTop;
     let s = document.getElementById("pagelet_bluebar");
+    let t = 0;
     document.addEventListener("scroll", function(){
         let b = document.body.scrollTop;
         if(b<a){
             // console.log("scroll up");
-            s.style.display = "";
+            t += a-b;
+            if(t > 10){
+                t = 0;
+                s.style.display = "";
+            }
         }else{
             // console.log("scroll down");
-            if(b>50) s.style.display = "none";
+            t = 0;
+            if(b>150) s.style.display = "none";
         }
         a = document.body.scrollTop;
     }, {passive: true});
